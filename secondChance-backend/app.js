@@ -1,6 +1,7 @@
 /*jshint esversion: 8 */
 require('dotenv').config();
 const express = require('express');
+const secondChanceItemsRoutes = require('./routes/secondChanceItemsRoutes');
 const cors = require('cors');
 const pinoLogger = require('./logger');
 
@@ -20,6 +21,7 @@ connectToDatabase().then(() => {
 
 
 app.use(express.json());
+app.use('/api/secondchance/items', secondChanceItemsRoutes);
 
 // Route files
 
