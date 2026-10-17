@@ -1,3 +1,4 @@
+const searchRoutes = require('./routes/searchRoutes');
 /*jshint esversion: 8 */
 require('dotenv').config();
 const express = require('express');
@@ -22,6 +23,7 @@ connectToDatabase().then(() => {
 
 app.use(express.json());
 app.use('/api/secondchance/items', secondChanceItemsRoutes);
+app.use('/api/secondchance/search', searchRoutes);
 
 // Route files
 
